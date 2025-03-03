@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-// Реализация my_lower_bound
 int my_lower_bound(const std::vector<int>& v, int value) {
     int left = 0;
     int right = v.size();
@@ -14,7 +13,6 @@ int my_lower_bound(const std::vector<int>& v, int value) {
     return left;
 }
 
-// Реализация my_upper_bound
 int my_upper_bound(const std::vector<int>& v, int value) {
     int left = 0;
     int right = v.size();
