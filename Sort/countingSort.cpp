@@ -4,12 +4,12 @@
 
 template <typename T>
 void countingSort(std::vector<T> &arr){
-    T min = *std::min_element(arr.begin(), arr.end());
-    T max = *std::max_element(arr.begin(), arr.end());
+    auto [minIt, maxIt] = std::minmax_element(arr.begin(), arr.end());
+    T min = *minIt, max = *maxIt;
 
     int range = max - min + 1;
     std::vector<T> output(arr.size());
-    std::vector<T> sum(range, 0);
+    std::vector<int> sum(range, 0);
 
     for(auto &i : arr){
         ++sum[i - min];
