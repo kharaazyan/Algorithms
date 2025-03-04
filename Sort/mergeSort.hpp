@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef MERGE_SORT
+#define MERGE_SORT
+
 #include <vector>
 
 template<typename T>
@@ -30,21 +32,4 @@ void mergeSort(std::vector<T>& arr, size_t left, size_t right){
     mergeSort(arr, mid + 1, right);
     merge(arr, left, mid, right);
 }
-
-int main() {
-    std::vector<float> data = {5, 2, 9, 1, 7, 24, -605, 128, 5, 28, 34, -65, 12,421,12,4,214,214,21,4,214,21,412,-642};
-    
-    std::cout << "Before Sorting: ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-    
-    mergeSort(data, 0, data.size() - 1);
-    
-    std::cout << "After Sorting:  ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
+#endif

@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef QUICK_SELECT
+#define QUICK_SELECT
+
 #include <vector>
 #include <ctime>
 #include <cstdlib>
@@ -19,6 +21,7 @@ int partition(std::vector<T>& data, int left, int right){
 template<typename T>
 T quickSelect(std::vector<T>& data, int left, int right, int k){
     if(left == right) return data[left];
+    srand(time(NULL));
 
     int pivot = partition(data, left, right);
     int count = pivot - left + 1;
@@ -27,19 +30,4 @@ T quickSelect(std::vector<T>& data, int left, int right, int k){
     else if(k < count) return quickSelect(data, left, pivot - 1, k);
     else return quickSelect(data, pivot + 1, right, k - count);
 }
-
-int main() {
-    srand(time(NULL));
-    std::vector<int> data = {9,6,3,2,7,1,4,5,10, 8};
-    int target = 1;
-    std::cout << "Before: ";
-    for(auto i : data){
-        std::cout << i << " ";
-    }
-    int value = quickSelect(data, 0, data.size() - 1, 7);
-    std::cout << std::endl << "After: ";
-    for(auto i : data){
-        std::cout << i << " ";
-    }
-    std::cout << std::endl << "pivot: " << value << std::endl;
-}
+#endif

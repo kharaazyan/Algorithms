@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef RADIX_SORT
+#define RADIX_SORT
+
 #include <vector>
 #include <algorithm>
 
@@ -35,20 +37,4 @@ void radixSort(std::vector<int>& arr){
     }
 }
 
-int main() {
-    std::vector<int> data = { 5, 2, 9, 1, 7, 24, 605, 128, 5, 28, 34, 65231, 2441412, 42, 6654};
-    
-    std::cout << "Before Sorting: ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-    
-    radixSort(data);
-    
-    std::cout << "After Sorting:  ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
+#endif

@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef QUICK_SORT
+#define QUICK_SORT
+
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -99,22 +101,4 @@ void quickSortMediana(std::vector<T> &arr, int low, int high){
         quickSortLast(arr, pivot + 1, high);
     }
 }
-
-int main(){
-    std::srand(std::time(0));
-    std::vector<float> data = {5, 2, 9, 1, 7, 24, -605, 128, 5, 28, 34, -65, 12, 421, 12, 4, 214, 214, 21, 4, 214, 21, 412, -642};
-
-    std::cout << "Before Sorting: ";
-    for (auto &val : data){
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-
-    quickSortFirst(data, 0, data.size() - 1);
-
-    std::cout << "After Sorting:  ";
-    for (auto &val : data){
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
+#endif

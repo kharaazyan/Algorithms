@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef BUBBLE_SORT
+#define BUBBLE_SORT
+
 #include <iterator> 
 #include <vector>
 
@@ -25,22 +27,4 @@ void bubbleSort(std::vector<T>& vec){
     }
 }
 
-
-int main() {
-    std::vector<float> data = { 5, 2, 9, 1, 7, 24, -605, 128, 5, 28, 34, -65, 12,421,12,4,214,214,21,4,214,21,412,-642};
-    
-    std::cout << "Before Sorting: ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-    
-    bubbleSort(data.begin(), data.end());
-    bubbleSort(data);
-    
-    std::cout << "After Sorting:  ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
+#endif

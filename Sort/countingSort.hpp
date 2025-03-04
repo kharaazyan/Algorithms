@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef COUNTING_SORT
+#define COUNTING_SORT
+
 #include <vector> 
 #include <algorithm>
 
@@ -28,22 +30,4 @@ void countingSort(std::vector<T> &arr){
         arr[i] = output[i];
     }
 }
-
-int main() {
-    //std::vector<float> data = { 5, 2, 9, 1, 7, 24, -605, 128, 5, 28, 34, -65, 12,421,12,4,214,214,21,4,214,21,412,-642};
-    std::vector<float> data = {5, 2, -1, 7,4, 4, 4};
-    
-    std::cout << "Before Sorting: ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-    
-    countingSort(data);
-    
-    std::cout << "After Sorting:  ";
-    for (auto& val : data) {
-        std::cout << val << " ";
-    }
-    std::cout << std::endl;
-}
+#endif

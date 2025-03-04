@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef MAX_SUB_ARRAY
+#define MAX_SUB_ARRAY
+
 #include <tuple>
 #include <limits>
 #include <vector>
@@ -101,14 +103,4 @@ std::tuple<int, int, T> kadane(std::vector<T>& arr){
     }
     return std::make_tuple(start, end, maxSum);
 }
-
-int main() {
-    std::vector<int> arr = {-2, 1, -3, 4, -1, 2, 1, -54, 4, 5, 3, 5, 4};
-
-    auto[start, end, sum] = findMaxDaQ(arr, 0, arr.size() - 1);
-
-    std::cout << "Максимальная подпоследовательность: " << std::endl;
-    std::cout << "Начальный индекс: " << start << std::endl;
-    std::cout << "Конечный индекс: " << end << std::endl;
-    std::cout << "Сумма: " << sum << std::endl;
-}
+#endif
