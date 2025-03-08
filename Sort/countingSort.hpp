@@ -26,8 +26,6 @@ void countingSort(std::vector<T> &arr){
         --sum[arr[i] - min];
     }
 
-    for(int i = 0; i < arr.size(); ++i){
-        arr[i] = output[i];
-    }
+    arr = std::move(output);
 }
 #endif
